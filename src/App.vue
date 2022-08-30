@@ -40,16 +40,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .logo {
+  top: 0;
   left: 0;
 }
 .menu {
   right: 0;
   width: 30px;
+  z-index: 10;
 }
 .logo,
 .menu {
-  top: 0;
   z-index: 1;
   margin: 2em;
   cursor: pointer;

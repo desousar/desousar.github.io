@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div id="aboutMe" class="section">
     ongoing maintenance<br />
     delivery soon
   </div>

@@ -9,28 +9,23 @@
     viewBox="0 0 24 24"
     xml:space="preserve"
     class="menu"
-    v-on:click="openSlideMenu()"
+    @click="openSlideMenu()"
   >
-    <path
-      d="M3,18h18v-2H3V18z M3,13h18v-2H3V13z M3,6v2h18V6H3z"
-      class="st2"
-    ></path>
+    <path d="M3,18h18v-2H3V18z M3,13h18v-2H3V13z M3,6v2h18V6H3z"></path>
   </svg>
   <transition name="slide">
-    <div id="slide-menu" v-show="showSlideMenu">
-      <div id="mySidenav" class="sidenav">
-        <a @click="closeSlideMenu()" class="closebtn">&times;<i></i></a>
-        <a href="#"><b>About Me</b></a>
-        <a href="#"><b>Work</b></a>
-        <a href="#"><b>Find Me</b></a>
-      </div>
+    <div class="sidenav" v-show="showSlideMenu">
+      <a @click="closeSlideMenu()" class="closebtn">&times;<i></i></a>
+      <a href="#home"><b>Me</b></a>
+      <a href="#aboutMe"><b>About Me</b></a>
+      <a href="#"><b>My Work</b></a>
     </div>
   </transition>
   <transition name="blur">
     <div
       @click="showSlideMenu = false"
       class="blur-div"
-      v-if="showSlideMenu"
+      v-show="showSlideMenu"
     ></div>
   </transition>
 </template>
@@ -96,11 +91,13 @@ export default {
   align-items: center;
 }
 
+.slide-enter-active,
 .slide-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease-out;
 }
+.slide-enter-from,
 .slide-leave-to {
-  opacity: 0;
+  transform: translateX(80vw);
 }
 
 .blur-div {
@@ -112,20 +109,12 @@ export default {
   top: 0;
   height: 100vh;
 }
-.blur-enter-active {
-  animation: b-slide 0.5s;
-}
-@keyframes b-slide {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+.blur-enter-active,
+.blur-active,
 .blur-leave-active {
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
+.blur-enter-from,
 .blur-leave-to {
   opacity: 0;
 }
