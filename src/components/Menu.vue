@@ -16,9 +16,9 @@
   <transition name="slide">
     <div class="sidenav" v-show="showSlideMenu">
       <a @click="closeSlideMenu()" class="closebtn">&times;<i></i></a>
-      <a href="#home"><b>Me</b></a>
-      <a href="#aboutMe"><b>About Me</b></a>
-      <a href="#"><b>My Work</b></a>
+      <a href="#home" @click="closeSlideMenu()"><b>Me</b></a>
+      <a href="#aboutMe" @click="closeSlideMenu()"><b>About Me</b></a>
+      <a href="#" @click="closeSlideMenu()"><b>My Work</b></a>
     </div>
   </transition>
   <transition name="blur">

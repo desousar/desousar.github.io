@@ -15,8 +15,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.section {
-  background-color: #63bce5;
-}
-</style>
+<style scoped></style>

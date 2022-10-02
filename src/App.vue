@@ -34,6 +34,8 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  background-attachment: fixed;
+  background-image: linear-gradient(#41b883, #3498db);
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
