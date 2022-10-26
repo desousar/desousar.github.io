@@ -34,6 +34,7 @@
 import { ref } from 'vue';
 
 export default {
+  name: 'Menu',
   setup() {
     const showSlideMenu = ref(false);
     function openSlideMenu() {
