@@ -20,16 +20,29 @@
 
 <script>
 import { useMouseInElement } from '@vueuse/core';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import EventBus from './../event-bus';
 
 export default {
   name: 'Hero',
   setup() {
+    onMounted(() => {
+      EventBus.on('menuIsOpened', isOpen => {
+        menuIsOpen.value = isOpen;
+      });
+    });
+
+    let menuIsOpen = ref(false);
+
     const target = ref(null);
     const { elementX, elementY, isOutside, elementHeight, elementWidth } =
       useMouseInElement(target);
 
     const cardTransform = computed(() => {
+      if (menuIsOpen.value) {
+        return '';
+      }
+
       const MAX_ROTATION = 25;
 
       const rX = (

@@ -32,6 +32,7 @@
 
 <script>
 import { ref } from 'vue';
+import EventBus from './../event-bus';
 
 export default {
   name: 'Menu',
@@ -39,9 +40,11 @@ export default {
     const showSlideMenu = ref(false);
     function openSlideMenu() {
       showSlideMenu.value = true;
+      EventBus.emit('menuIsOpened', showSlideMenu.value);
     }
     function closeSlideMenu() {
       showSlideMenu.value = false;
+      EventBus.emit('menuIsOpened', showSlideMenu.value);
     }
 
     return {
