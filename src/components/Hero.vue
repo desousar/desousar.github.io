@@ -12,7 +12,7 @@
       <div>Benoît&nbsp;</div>
       <div>DE SOUSA</div>
     </h2>
-    <div class="job">
+    <div @click="scrollToAboutMe" class="job">
       <h3>Web Developer</h3>
     </div>
   </div>
@@ -52,8 +52,7 @@ export default {
 
       const rY = (
         MAX_ROTATION / 2 -
-        (elementX.value / elementWidth.value) * MAX_ROTATION -
-        MAX_ROTATION / 2
+        (elementX.value / elementWidth.value) * MAX_ROTATION
       ).toFixed(2); // handles y-axis
 
       return isOutside.value
@@ -61,9 +60,14 @@ export default {
         : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`;
     });
 
+    function scrollToAboutMe() {
+      document.getElementById('aboutMe').scrollIntoView({ behavior: 'smooth' });
+    }
+
     return {
       target,
-      cardTransform
+      cardTransform,
+      scrollToAboutMe
     };
   }
 };
