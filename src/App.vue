@@ -35,7 +35,7 @@ body {
   margin: 0;
   padding: 0;
   background-attachment: fixed;
-  background-image: linear-gradient(#41b883, #3498db);
+  background-image: linear-gradient(#3498db, white);
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -50,12 +50,11 @@ body {
 .menu {
   right: 0;
   width: 30px;
-  z-index: 10;
 }
 .logo,
 .menu {
   z-index: 1;
-  margin: 2em;
+  margin: 32px;
   cursor: pointer;
   position: fixed;
 }

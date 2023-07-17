@@ -84,6 +84,7 @@ h2.name {
   margin: 0;
   font-size: 65px;
   display: flex;
+  flex-wrap: wrap;
 }
 .job {
   cursor: pointer;
@@ -97,7 +98,7 @@ h2.name {
   border-radius: 50px;
 }
 .job:hover {
-  background-color: #41b883;
+  background-color: #3498db;
 }
 h3 {
   text-align: center;

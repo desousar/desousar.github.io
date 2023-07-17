@@ -15,7 +15,24 @@
   </svg>
   <transition name="slide">
     <div class="sidenav" v-show="showSlideMenu">
-      <a @click="closeSlideMenu()" class="closebtn">&times;<i></i></a>
+      <!-- <a @click="closeSlideMenu()" class="closebtn">&times;<i></i></a> -->
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 24 24"
+        xml:space="preserve"
+        style="fill: #ffffff"
+        class="closebtn"
+        @click="closeSlideMenu()"
+      >
+        <path
+          d="M 3.8430679,7.9944173 18.980222,17.734365 20.062438,16.052459 4.9252843,6.3125114 Z m 4e-7,8.0580417 15.1371537,-9.7399475 1.082216,1.681906 -15.1371537,9.7399475 z"
+        ></path>
+      </svg>
       <a href="#home" @click="closeSlideMenu()"><b>Me</b></a>
       <a href="#aboutMe" @click="closeSlideMenu()"><b>About Me</b></a>
       <a href="#" @click="closeSlideMenu()"><b>My Work</b></a>
@@ -86,13 +103,9 @@ export default {
 
 .sidenav .closebtn {
   cursor: pointer;
-  font-size: 40px;
-  color: white;
-  display: flex;
-  flex-direction: row-reverse;
-  width: 80%;
-  height: 12vh;
-  align-items: center;
+  width: 30px;
+  align-self: flex-end;
+  margin: 32px;
 }
 
 .slide-enter-active,
